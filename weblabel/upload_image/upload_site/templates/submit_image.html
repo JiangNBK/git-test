@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>上传图片</title>
+
+</head>
+
+
+
+
+<body>
+
+    <h1>请上传图片</h1>
+    <form action="/upload_site/receive/" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <input type="text" name="user" value="{{user}}" readonly="readonly" style="display:none">
+        <input type="text" name="authority" value="{{authority}}" readonly="readonly" style = "display:none">
+        <input type="text" name="pwd" value="{{pwd}}" readonly="readonly" style = "display:none">
+        <input type="file" name="upload_file" accept="image/*" multiple>
+        <input type="submit" value="上传">
+    </form>
+
+    <form action="/upload_site/showlist/" method="get" enctype="multipart/form-data">
+        <input type="text" name="user" value="{{user}}" readonly="readonly" style="display:none">
+        <input type="text" name="authority" value="{{authority}}" readonly="readonly" style = "display:none">
+        <input type="text" name="pwd" value="{{pwd}}" readonly="readonly" style = "display:none">
+        <input type="submit" value="查看列表">
+    </form>
+
+
+
+</form>
+</body>
+</html>
